@@ -22,7 +22,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use("/assets", express.static(__dirname + '/public/assets'));
+app.use("/stylesheets", express.static(__dirname + '/public/stylesheets'));
+app.use("/js", express.static(__dirname + '/public/js'));
+
+// app.engine(
+//   "pub",
+//   pug.engine
+// )
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    // partial:index.partial.html
+    .container.right-panel-active
+        // Sign Up
+        .container__form.container--signup
+            form#form1.form(action='#')
+                h2.form__title Sign Up
+                input.input(type='text' placeholder='User')
+                input.input(type='email' placeholder='Email')
+                input.input(type='password' placeholder='Password')
+                button.btn Sign Up
+            
+        // Sign In
+        .container__form.container--signin
+            form#form2.form(action='#')
+                h2.form__title Sign In
+                input.input(type='email' placeholder='Email')
+                input.input(type='password' placeholder='Password')
+                a.link(href='#') Forgot your password?
+                button.btn Sign In
+
+        // Overlay
+        .container__overlay
+            .overlay
+                .overlay__panel.overlay--left
+                    button#signIn.btn Sign In
+                .overlay__panel.overlay--right
+                    button#signUp.btn Sign Up
+
+    // partial
+    script(src='../public/js/script.js')
