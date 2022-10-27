@@ -15,22 +15,15 @@ var testsRouter = require('./routes/tests');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './public/views'));
 app.set('view engine', 'pug');
+app.locals.basedir = path.join(__dirname, './public/views');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
-app.use("/assets", express.static(__dirname + '/public/assets'));
-app.use("/stylesheets", express.static(__dirname + '/public/stylesheets'));
-app.use("/js", express.static(__dirname + '/public/js'));
-
-// app.engine(
-//   "pub",
-//   pug.engine
-// )
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

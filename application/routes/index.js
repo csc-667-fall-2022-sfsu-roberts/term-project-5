@@ -6,13 +6,12 @@ router.get('/', (request, response) => {
   response.render('landing', { title: 'Express' });
 });
 
-router.get('/login', (request, response) => {
-  response.render('test', { title: 'Login' });
+router.get('/signup', (request, response) => {
+  response.render('signup', { title: 'Sign Up' });
 })
 
 router.get('/registration', (request, response) => {
   response.render('registration', {title: 'Registration'});
 })
-
 
 module.exports = router;
