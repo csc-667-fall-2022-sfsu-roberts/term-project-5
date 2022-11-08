@@ -1,27 +1,25 @@
 'use strict';
-module.exports = {
-    up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable(
-            'messages',
-            {
-                id: {
-                    type: Sequelize.INTEGER,
-                    primaryKey: true,
-                    autoIncrement: true
-                },
-                createdAt: {
-                    type: Sequelize.DATE,
-                    defaultValue: Sequelize.literal('NOW()'),
-                    allowNull: false
-                },
-                content: {
-                    type: Sequelize.STRING,
-                    allowNull: false
-                }
-            }
-        );
-    },
-    down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('test_table');
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class messages extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
     }
+  }
+  messages.init({
+    id: DataTypes.INTEGER,
+    createdAt: DataTypes.DATE,
+    content: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'messages',
+  });
+  return messages;
 };

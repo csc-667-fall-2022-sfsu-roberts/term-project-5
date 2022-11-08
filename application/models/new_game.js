@@ -1,42 +1,28 @@
 'use strict';
-module.exports = {
-    up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable(
-            'new_game',
-            {
-                id: {
-                    type: Sequelize.INTEGER,
-                    primaryKey: true,
-                    autoIncrement: true
-                },
-                deck_id: {
-                    type: Sequelize.INTEGER,
-                    primaryKey: true,
-                },
-                player_id: {
-                    type: Sequelize.INTEGER,
-                    primaryKey: true,
-                    autoIncrement: true
-                },
-                is_public: {
-                    type: Sequelize.BOOLEAN,
-                    primaryKey: true,
-                    autoIncrement: true
-                },
-                createdAt: {
-                    type: Sequelize.DATE,
-                    defaultValue: Sequelize.literal('NOW()'),
-                    allowNull: false
-                },
-                max_players: {
-                    type: Sequelize.INTEGER,
-                    defaultValue: Sequelize.INTEGER('2'),
-                    allowNull: false
-                }
-            }
-        );
-    },
-    down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('test_table');
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class new_game extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
     }
+  }
+  new_game.init({
+    id: DataTypes.INTEGER,
+    deck_id: DataTypes.INTEGER,
+    player_id: DataTypes.INTEGER,
+    isPublic: DataTypes.BOOLEAN,
+    createdAt: DataTypes.DATE,
+    max_players: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'new_game',
+  });
+  return new_game;
 };
