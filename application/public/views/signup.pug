@@ -17,7 +17,7 @@ block content
         .container__form.container--signin
             form#signin_form.form(action="/auth/signin" method="post")
                 h2.form__title Sign In
-                input.input(type='email' name='signin_email' placeholder='Email')
+                input.input(type='text' name='signin_username' placeholder='Username')
                 input.input(type='password' name='signin_password' placeholder='Password')
                 a.link(href='#') Forgot your password?
                 button.btn Sign In

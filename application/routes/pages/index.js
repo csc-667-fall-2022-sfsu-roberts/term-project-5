@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', (request, response) => {
-  response.render('landing', { title: 'Express' });
+  const { sessionID } = request;
+  const { username } = request.session;
+
+  response.render('landing', { username, sessionID });
 });
 
 module.exports = router;

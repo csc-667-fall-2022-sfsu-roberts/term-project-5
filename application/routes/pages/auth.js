@@ -6,7 +6,7 @@ router.get('/signup', (request, response) => {
 })
 
 router.post('/signup', (request, response) => {
-    const {username, password} = request.body;
+    const {signup_username, signup_password} = request.body;
   
     console.log('test');
     console.log({signup_username, signup_password});
@@ -14,9 +14,13 @@ router.post('/signup', (request, response) => {
 })
 
 router.post('/signin', (request, response) => {
-    const {signin_email, signin_password} = request.body;
+    const {signin_username, signin_password} = request.body;
 
-    console.log({signin_email, signin_password});
+    console.log({signin_username, signin_password});
+
+    request.session.authenticated = true;
+    request.session.username = signin_username;
+
     response.redirect('/');
 })
 

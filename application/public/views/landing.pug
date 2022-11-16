@@ -1,10 +1,12 @@
 extends /layouts/layout
 
 block content
-    p landing page
+    if username 
+        h2 Welcome #{username} #{sessionID}
+    
     br
     a(href='/auth/signup') Sign Up
     br
-    a(href='#') Join Lobby
+    a(href='/lobby') Join Lobby
     br
     a(href='#') Create Lobby
