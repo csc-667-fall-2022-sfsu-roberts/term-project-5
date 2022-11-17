@@ -1,21 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var sessionInstance = require("./app-config/session");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const sessionInstance = require("./app-config/session");
+const protect = require('./app-config/protect');
 
 if(process.env.NODE_ENV === 'development') {
   require("dotenv").config();
 }
 
-var indexRouter = require('./routes/pages/index');
-var usersRouter = require('./routes/pages/users');
-var testsRouter = require('./routes/pages/tests');
-var authRouter = require('./routes/pages/auth');
-var lobbyRouter = require('./routes/pages/lobby');
+const indexRouter = require('./routes/pages/index');
+const usersRouter = require('./routes/pages/users');
+const testsRouter = require('./routes/pages/tests');
+const authRouter = require('./routes/pages/auth');
+const lobbyRouter = require('./routes/pages/lobby');
+const gamesRouter = require('./routes/pages/games');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, './public/views'));
@@ -33,7 +35,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/tests', testsRouter);
 app.use('/auth', authRouter);
-app.use('/lobby', lobbyRouter);
+app.use('/lobby', protect, lobbyRouter);
+app.use('/games', protect, gamesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

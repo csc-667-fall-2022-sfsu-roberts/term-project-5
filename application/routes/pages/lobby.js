@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const protect = require('../../app-config/protect');
 
-
-router.get('/', protect, (request, response) => {
+router.get('/', (request, response) => {
     response.render('lobby');
 });
 
