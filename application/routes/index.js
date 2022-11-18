@@ -13,5 +13,9 @@ router.get('/signup', (request, response) => {
 router.get('/registration', (request, response) => {
   response.render('registration', {title: 'Registration'});
 })
+router.get('/chat', (request, response) => {
+  response.render('chat', {title: 'chat'});
+})
+
 
 module.exports = router;
