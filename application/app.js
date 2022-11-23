@@ -13,6 +13,8 @@ var usersRouter = require('./routes/users');
 var testsRouter = require('./routes/tests');
 var chatRouter = require('./routes/authenticate/chat');
 
+const sessionInstance = require('./app_config/sessions');
+
 var app = express();
 
 // view engine setup
@@ -25,6 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(sessionInstance);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
