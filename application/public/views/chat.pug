@@ -1,7 +1,15 @@
+script(src="/socket.io/socket.io.js")
+script(src="../js/chat.js")
 block content
   h1 chat Box (#{username} #{user_id})
+
+ 
+  template#message-content
+    .chat-message
+      span.message 
+      span.timestamp 
 
   #chat
     #messages 
       div 
-        input(type ="text" id="message")
+        input#message(type="text")

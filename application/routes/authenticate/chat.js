@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-router.post("/id", (req, res) => {
+router.post("/:id", (req, res) => {
   const { id } = req.params;
   const { username } = req.session;
   const { message } = req.body;
