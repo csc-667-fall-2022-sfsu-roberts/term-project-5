@@ -18,20 +18,25 @@ router.post('/signup', (request, response) => {
     })
     .catch((error) => {
         console.log(error);
-        response.redirect('/auth/signup')
+        response.redirect('/auth/signup');
     })
     
 })
 
 router.post('/signin', (request, response) => {
-    const {signin_username, signin_password} = request.body;
+    const { signin_username, signin_password } = request.body;
 
-    console.log({signin_username, signin_password});
+    Users.signin( signin_username, signin_password )
+    .then(({ username }) => {
+        request.session.authenticated = true;
+        request.session.username = username;
 
-    request.session.authenticated = true;
-    request.session.username = signin_username;
-
-    response.redirect('/');
+        response.redirect('/');
+    })
+    .catch((error) => {
+        console.log(error);
+        response.redirect('/auth/signup');
+    })
 })
 
 router.post('/signout', (request, response) => {
