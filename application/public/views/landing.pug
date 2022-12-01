@@ -1,11 +1,13 @@
 extends /layouts/layout
 
 block content
-    if username 
-        h2 Welcome #{username} #{sessionID}
-    
+    if logged 
+        h2 Welcome #{username}
     br
-    a(href='/auth/signup') Sign Up
+    if logged
+        a#signout-button Sign Out
+    else
+        a(href='/auth/signup') Sign Up
     br
     a(href='/lobby') Lobby page
     br
