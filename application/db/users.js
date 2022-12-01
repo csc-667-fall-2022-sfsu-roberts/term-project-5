@@ -9,7 +9,7 @@ const REGISTER_USER = "INSERT INTO users (username, email, password) VALUES (${u
 const signup = (username, email, password ) => {
     return db
         .none(USERNAME_EXISTS, { username })
-        // .then(() => db.none(EMAIL_EXISTS, { email } ))
+        .then(() => db.none(EMAIL_EXISTS, { email } ))
         .then(() => db.one(REGISTER_USER, { username, email, password } ))
 };
 
