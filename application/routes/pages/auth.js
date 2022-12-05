@@ -10,10 +10,12 @@ router.post('/signup', (request, response) => {
     const { signup_username, signup_email, signup_password } = request.body;
 
     Users.signup( signup_username, signup_email, signup_password )
-    .then(({ username }) => {
+    .then(({ id, username }) => {
         request.session.authenticated = true;
         request.session.username = username;
-
+        
+        console.log(id);
+        request.session.userId = id;
         response.redirect('/');
     })
     .catch((error) => {
@@ -27,8 +29,11 @@ router.post('/signin', (request, response) => {
     const { signin_username, signin_password } = request.body;
 
     Users.signin( signin_username, signin_password )
-    .then(({ username }) => {
+    .then(({ id, username }) => {
         request.session.authenticated = true;
+
+        console.log(id);
+        request.session.userId = id;
         request.session.username = username;
 
         response.redirect('/');
