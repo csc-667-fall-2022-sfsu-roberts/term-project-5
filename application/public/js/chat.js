@@ -1,27 +1,30 @@
-const socket = io();
+const socket = io(); 
 
-const messages = document.querySelector("#messages");
-const input = document.querySelector("#message");
-const messageTemplate = document.querySelector("#message-content");
+ const input = document.querySelector("#message");
 
 input.addEventListener("keydown", (event) => {
   if (event.keyCode == 13) {
     const message = event.target.value;
 
-    fetch("chat/0", {
+    fetch("/chat/0", {
       method: "post",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message }),     
     });
   }
 });
 
-socket.on("chat:0", ({ username, message, timestamp }) => {
-  console.log({ username, message, timestamp });
+socket.on("chat/0", (message) => {
+  console.log("fuck this shi")
+  console.log(message);
+  const body=  document.body;
+  const div = document.createElement("div");
+  div.classList.add("chat-message");
 
-  const content = messageTemplate.content.cloneNode(true);
+  const messageSpan = document.createElement("span");
+  messageSpan.classList.add("message");
+  messageSpan.innerText = message;
 
-  content.querySelector(".message").innerText = message;
+  body.appendChild(div.appendChild(messageSpan));
 
-  messages.appendChild(content);
 }); 
