@@ -13,7 +13,7 @@ var usersRouter = require('./routes/users');
 var testsRouter = require('./routes/tests');
 var chatRouter = require('./routes/authenticate/chat');
 
-const sessionInstance = require('./app_config/sessions');
+const sessionInstance = require('./app-config/session');
 
 var app = express();
 

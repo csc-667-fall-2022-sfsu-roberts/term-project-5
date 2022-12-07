@@ -1,5 +1,5 @@
 const socketIo = require("socket.io");
-const sessionMiddleware = require("../app_config/sessions");
+const sessionMiddleware = require("../app-config/session");
 
 const initialize = (httpServer, app) => {
   const io = new socketIo.Server(httpServer);
