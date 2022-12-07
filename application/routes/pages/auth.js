@@ -13,8 +13,6 @@ router.post('/signup', (request, response) => {
     .then(({ id, username }) => {
         request.session.authenticated = true;
         request.session.username = username;
-        
-        console.log(id);
         request.session.userId = id;
         response.redirect('/');
     })
@@ -31,11 +29,8 @@ router.post('/signin', (request, response) => {
     Users.signin( signin_username, signin_password )
     .then(({ id, username }) => {
         request.session.authenticated = true;
-
-        console.log(id);
         request.session.userId = id;
         request.session.username = username;
-
         response.redirect('/');
     })
     .catch((error) => {
