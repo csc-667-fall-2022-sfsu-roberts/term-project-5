@@ -15,8 +15,7 @@ input.addEventListener("keydown", (event) => {
 });
 
 socket.on("chat/0", (message) => {
-  
-  console.log(message);
+
   const body=  document.body;
   const div = document.createElement("div");
   div.classList.add("chat-message");
