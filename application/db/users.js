@@ -10,9 +10,15 @@ const SIGN_UP_USER = "INSERT INTO users (username, email, password) VALUES (${us
 const SING_IN_USER = "SELECT id, username, password FROM users WHERE username=${username}";
 
 const signup = (username, email, password ) => {
+    let blank = /^ *$/;
     return db
         .none(USERNAME_EXISTS, { username })
         .then(() => db.none(EMAIL_EXISTS, { email } ))
+        .then(()=> {
+            if ( username.match(blank) !== null || email.match(blank) !== null || password.match(blank) != null ) {
+                return Promise.reject("Please enter all fields.");
+            }
+        })
         .then(() => bcrypt.hash(password, 10))
         .then((hash) => db.one(SIGN_UP_USER, { username, email, password: hash } ))
 };
