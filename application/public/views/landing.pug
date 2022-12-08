@@ -1,5 +1,14 @@
 extends /layouts/layout
 
 block content
-    p landing page
-    a(href='/signup') Sign Up
+    if logged 
+        h2 Welcome #{username}
+    br
+    if logged
+        a#signout-button Sign Out
+    else
+        a(href='/auth/signup') Sign Up
+    br
+    a(href='/lobby') Lobby page
+    br
+    a(href='/games/1') Game page
