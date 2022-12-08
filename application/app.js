@@ -11,8 +11,6 @@ if(process.env.NODE_ENV === 'development') {
 }
 
 const indexRouter = require('./routes/pages/index');
-const usersRouter = require('./routes/pages/users');
-const testsRouter = require('./routes/pages/tests');
 const authRouter = require('./routes/pages/auth');
 const lobbyRouter = require('./routes/pages/lobby');
 const gamesRouter = require('./routes/pages/games');
@@ -38,8 +36,6 @@ app.use((request, response, next) => {
 })
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/tests', testsRouter);
 app.use('/auth', authRouter);
 app.use('/lobby', protect, lobbyRouter);
 app.use('/games', protect, gamesRouter);
