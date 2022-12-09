@@ -1,0 +1,37 @@
+body {
+  background-color: rgba(167, 167, 167, 0.806);
+}
+
+.cardContainer {
+  
+}
+
+.cards {
+  background-image: url("/../images/cards.png");
+  height: 258px;
+  width: 172px;
+}
+
+.red {
+  background-position-y: 0px;
+  background-position-x: -2400px;
+}
+
+.blue {
+  background-position-y: -285px;
+  background-position-x: -400px;
+}
+
+.yellow {
+  background-position-y: -570px;
+  background-position-x: -600px;
+}
+
+.green {
+  background-position-y: -855px;
+}
+
+.wild{
+  background-position-y: -1140px;
+  background-position-x: -400px; 
+}

@@ -16,6 +16,11 @@ router.get('/registration', (request, response) => {
 router.get('/chat', (request, response) => {
   response.render('chat', {title: 'chat'});
 })
+//currently used for testing 
+router.get('/cards', (request, response) => {
+  response.render('cards', {title: 'cards'});
+})
+
 
 
 module.exports = router;

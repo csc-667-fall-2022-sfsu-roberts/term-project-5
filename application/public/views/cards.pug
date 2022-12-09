@@ -1,0 +1,20 @@
+
+link(rel='stylesheet' href='/stylesheets/cards.css')
+img#cardSheet(src="/../images/cards.png", visibility: hidden)
+html 
+ h2 Testing cards
+  
+body 
+  input#button(type="button", value="addCard")
+  input#button2(type="button", value="deleteCard")
+
+  .cardContainer 
+    .cards.red
+    .cards.blue
+    .cards.yellow
+    .cards.green
+    .cards.wild
+ 
+    
+script(src="../js/gameFunc/deck.js")
+script(src="../js/gameFunc/playerHand.js")
