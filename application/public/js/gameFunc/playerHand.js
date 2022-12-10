@@ -14,7 +14,7 @@
 // WILD CARDS only up to 
 class Card {
   //need to add numValue,color,effect
-  const cad= document.createElement()
+  
   constructor() {
     this.cardHeight = 258;
     this.cardWidth= 172;
