@@ -1,37 +1,47 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const sessionInstance = require("./app-config/session");
+const protect = require('./app-config/protect');
 
 if(process.env.NODE_ENV === 'development') {
   require("dotenv").config();
 }
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var testsRouter = require('./routes/tests');
-var chatRouter = require('./routes/authenticate/chat');
+const indexRouter = require('./routes/pages/index');
+const authRouter = require('./routes/pages/auth');
+const lobbyRouter = require('./routes/pages/lobby');
+const gamesRouter = require('./routes/pages/games');
+const chatRouter = require('./routes/authenticate/chat');
 
 const sessionInstance = require('./app-config/session');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, './public/views'));
 app.set('view engine', 'pug');
 app.locals.basedir = path.join(__dirname, './public/views');
+app.use(sessionInstance);
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(sessionInstance);
+
+app.use((request, response, next) => {
+  if(request.session.username)
+    response.locals.logged = true;
+  next();
+})
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/tests', testsRouter);
+app.use('/auth', authRouter);
+app.use('/lobby', protect, lobbyRouter);
+app.use('/games', protect, gamesRouter);
 app.use('/chat', chatRouter); // need to authenticate
 
 // catch 404 and forward to error handler

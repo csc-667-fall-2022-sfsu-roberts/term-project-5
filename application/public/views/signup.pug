@@ -1,24 +1,23 @@
-extends ./layouts/layout
+extends ./layouts/signup-layout
 
 block content
     // partial:index.partial.html
     .container.right-panel-active
         // Sign Up
         .container__form.container--signup
-            form#form1.form(action='#')
+            form#signup_form.form(action="/auth/signup" method="post")
                 h2.form__title Sign Up
-                input.input(type='text' placeholder='Username')
-                input.input(type='email' placeholder='Email')
-                input.input(type='password' placeholder='Password')
-                input.input(type='password' placeholder='Confirm Password')
+                input.input(type='text' name='signup_username' placeholder='Username')
+                input.input(type='email' name='signup_email' placeholder='Email')
+                input.input(type='password' name='signup_password' placeholder='Password')
                 button.btn Sign Up
             
         // Sign In
         .container__form.container--signin
-            form#form2.form(action='#')
+            form#signin_form.form(action="/auth/signin" method="post")
                 h2.form__title Sign In
-                input.input(type='email' placeholder='Email')
-                input.input(type='password' placeholder='Password')
+                input.input(type='text' name='signin_username' placeholder='Username')
+                input.input(type='password' name='signin_password' placeholder='Password')
                 a.link(href='#') Forgot your password?
                 button.btn Sign In
 
@@ -31,4 +30,4 @@ block content
                     button#signUp.btn Sign Up
 
     // partial
-    script(src='../js/signup.js')
+    script(src='../frontend-js/signup.js')

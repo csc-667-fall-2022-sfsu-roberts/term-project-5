@@ -1,0 +1,11 @@
+extends /layouts/layout
+
+block content 
+    if username 
+        p Welcome #{username} #{sessionID}
+    
+    p lobby page
+
+block footer 
+    script(src="/socket.io/socket.io.js")
+    script(src="../frontend-js/test-socket.js")
