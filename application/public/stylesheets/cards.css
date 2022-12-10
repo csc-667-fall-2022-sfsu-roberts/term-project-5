@@ -3,10 +3,13 @@ body {
 }
 
 .cardContainer {
-  
+  border: 1px solid black;
+  margin: 1rem;
+  display: flex;
+  max-width: 1500px;
 }
 
-.cards {
+.cards { 
   background-image: url("/../images/cards.png");
   height: 258px;
   width: 172px;
@@ -14,17 +17,16 @@ body {
 
 .red {
   background-position-y: 0px;
-  background-position-x: -2400px;
 }
 
 .blue {
   background-position-y: -285px;
-  background-position-x: -400px;
+
 }
 
 .yellow {
   background-position-y: -570px;
-  background-position-x: -600px;
+  
 }
 
 .green {
@@ -34,4 +36,47 @@ body {
 .wild{
   background-position-y: -1140px;
   background-position-x: -400px; 
+}
+.addFour{
+  background-position-y: -1140px;
+  background-position-x: -200px; 
+}
+
+.one{
+  background-position-x: -200px; 
+}
+.two{
+  background-position-x: -400px;
+}
+.three{
+  background-position-x: -600px;
+}
+.four{
+  background-position-x: -800px;
+}
+.five{
+  background-position-x: -1000px;
+}
+.six{
+  background-position-x: -1200px;
+}
+.seven{
+  background-position-x: -1400px;
+}
+.eight{
+  background-position-x: -1600px;
+}
+.nine{
+  background-position-x: -1800px;
+}
+
+.skip{
+  background-position-x: -2000px;
+}
+
+.reverse{
+  background-position-x: -2200px;
+}
+.addTwo{
+  background-position-x: -2400px;
 }
