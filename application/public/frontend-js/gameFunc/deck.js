@@ -14,8 +14,13 @@ function addCard() {
     div.classList.add("cards");
 
     const cardDiv = document.createElement("div");
-    cardDiv.classList.add("cards");
     
+    // need to get color,value,effect from db
+  
+    cardDiv.classList.add("cards");
+    cardDiv.classList.add('blue');
+    cardDiv.classList.add('reverse');
+   // then add to player hand
     container.appendChild(div.appendChild(cardDiv));
 };
 
@@ -23,6 +28,9 @@ function removeCard() {
 
 //todo need to find cardID then remove from player hand 
 //and add to junkpile/discarded cards
+moveCard = document.getElementById(
+  value+color+special
+)
 
 };
 
