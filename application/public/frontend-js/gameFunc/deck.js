@@ -1,5 +1,5 @@
 const color = ['red', 'blue', 'yellow', 'green', 'wild'];
-const number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 ,12];
+const number = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"];
 const special = ['none', 'skip', 'reverse', 'addTwo', 'addFour'];
 
 const cardContainer = document.querySelector(".cardContainer");
@@ -17,6 +17,8 @@ function addCard() {
     
     // need to get color,value,effect from db
   
+    //
+    cardDiv.getColor
     cardDiv.classList.add("cards");
     cardDiv.classList.add('blue');
     cardDiv.classList.add('reverse');

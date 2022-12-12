@@ -5,7 +5,7 @@ block content
     ul#navBarUL
       if logged 
        li
-       -let username ={name:}// get session info
+        let username ={name:}// get session info
         h2 Welcome #{username}
         a#signout-button Sign Out
       else
@@ -15,13 +15,3 @@ block content
         a(href='/lobby') Lobby page
       li
         a(href='/games/1') Game page   
-
- 
-// once logged it box with game 
-// create/join simplewithh Id
-//
-    
-    
-    
-  div#content-wrapper
-    .content
