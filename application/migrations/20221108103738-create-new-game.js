@@ -9,8 +9,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
+      title: {
+        type:Sequelize.STRING
       },
       deck_id: {
         type: Sequelize.INTEGER
@@ -18,23 +18,6 @@ module.exports = {
       player_id: {
         type: Sequelize.INTEGER
       },
-      isPublic: {
-        type: Sequelize.BOOLEAN
-      },
-      createdAt: {
-        type: Sequelize.DATE
-      },
-      max_players: {
-        type: Sequelize.INTEGER
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   async down(queryInterface, Sequelize) {

@@ -5,3 +5,16 @@ block content
         p Welcome #{username} #{sessionID}
     
     p lobby page
+    #games-list
+        ul
+        
+    form(action="/api/games/create", method="post")
+        lable(for="title")
+        input(type="text", name="title")
+        button#new-game New Game
+
+block footer 
+    script(src="/socket.io/socket.io.js")
+    script(src="../frontend-js/setup.js")
+    script(src="../frontend-js/test-socket.js")
+    script(src="../frontend-js/gameManagement.js")
