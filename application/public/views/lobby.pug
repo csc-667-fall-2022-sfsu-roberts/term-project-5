@@ -4,9 +4,14 @@ block content
     if username 
         p Welcome #{username} #{sessionID}
     
-    p lobby page
+    p Join a game or Create a new game
     #games-list
         ul
+            each game in games
+                li
+                    span= game.title
+                    form(action=`/api/games/${game.id}/join`, method="post")
+                        button(type="submit") Join
         
     form(action="/api/games/create", method="post")
         lable(for="title")

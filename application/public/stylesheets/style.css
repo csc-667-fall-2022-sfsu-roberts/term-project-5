@@ -20,9 +20,6 @@ body {
   margin-inline-end: 0px;
   padding-inline-start: 40px;
 }
-li{
-  display: inline-block;
-}
 a {
   color: black;
 }

@@ -4,7 +4,7 @@ const CREATE_GAME = "INSERT INTO new_games (title) VALUES (${title}) RETURNING i
 
 const ADD_PLAYER = "INSERT INTO new_players (user_id, game_id) VALUES (${user_id}, ${game_id}) RETURNING game_id";
 
-const GAMES_LIST = "SELECT * FROM new_games";
+const GAMES_LIST = "SELECT * FROM new_games LIMIT 5";
 
 const create = (user_id, title = " ") => {
     return db.one(CREATE_GAME, { title })
@@ -14,11 +14,11 @@ const create = (user_id, title = " ") => {
 }
 
 const addUser = (user_id, game_id) => {
-    db.one(ADD_PLAYER, { user_id, game_id });
+    return db.one(ADD_PLAYER, { user_id, game_id });
 }
 
 const gameList = () => {
-    db.any(GAMES_LIST);
+    return db.any(GAMES_LIST);
 }
 
 module.exports = { create, addUser, gameList};

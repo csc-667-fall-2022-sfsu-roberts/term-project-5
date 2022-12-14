@@ -1,3 +1,13 @@
 head
-    a(href='/') home
-    br
+    nav#navbar
+        ul#navBarUL
+            li 
+                a(href='/') home
+            if logged 
+                li
+                    a#signout-button Sign Out
+            else
+                li
+                    a(href='/auth/signup') Sign Up
+            li
+                a(href='/lobby') Play

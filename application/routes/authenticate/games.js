@@ -19,7 +19,18 @@ router.post("/create", (request, response) => {
     .catch((error) => {
         console.log(error);
     })
-
 });
+
+router.post("/:id/join", (request, response) => {
+    const { user_id } = request.session;
+    const { id } = request.params;
+    Games.addUser(user_id, id)
+    .then(() => {
+        response.redirect(`/games/${id}`);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+})
 
 module.exports = router;
