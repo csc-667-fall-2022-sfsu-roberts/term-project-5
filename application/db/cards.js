@@ -1,4 +1,7 @@
 console.log("test1");
+const express = require("express");
+const router = express.Router();
+
 const db = require('./index');
 
 const color = ['red', 'blue', 'yellow', 'green', 'wild'];

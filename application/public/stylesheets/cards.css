@@ -1,22 +1,40 @@
 body {
   background-color: rgba(167, 167, 167, 0.806);
 }
+.gameContainer{
+  position: relative;
+  display:block;  
+  margin: 30px 30px;
+  border: 1px solid blue;
+  background-color: rgba(24, 187, 111, 0.806);
+  height:500px;
+  max-width: 1000px;
+}
 
 .cardContainer {
-  border: 1px solid black;
-  margin: 1rem;
-  display: flex;
-  max-width: 1500px;
+  position: relative;
+  top: 80%;
+  left:10%;
+  display:flex;
+  max-width: 850px;
+  scale: .5 .5;
+
 }
 
 .cards { 
   background-image: url("/../images/cards.png");
   height: 258px;
   width: 171px;
+  display: inline-block;
+  transition: .2s;
+  
 }
-
+.cards:hover {
+  transform: translateY(-15%);
+}
 .red {
   background-position-y: 0px;
+  max-block-size: inherit;
 }
 
 .blue {

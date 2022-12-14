@@ -5,16 +5,24 @@ html
  h2 Testing cards
   
 body 
-  input#button(type="button", value="Draw Card")
-  
-  input#button2(type="button", value="Play Card")
-  
 
+  
+.gameContainer test
+  .chatContainer chat-box
+  
+  .playerN Player2
+    .NumCards
+  
+  .CurrentCard CurrentCard
+  
   .cardContainer 
-    .cards.red.one 
+    .cards
+      .red.one 
     .cards.blue.two
     .cards.yellow.three
     .cards.green.four
     .cards.wild.two
     
+  input#button(type="button", value="Draw Card")
+  input#button2(type="button", value="Play Card")
     
