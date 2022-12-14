@@ -1,6 +1,13 @@
-const color = ['red', 'blue', 'yellow', 'green', 'wild'];
-const number = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"];
-const special = ['none', 'skip', 'reverse', 'addTwo', 'addFour'];
+class Card {
+  //need to add numValue,color,effect
+  constructor(color,number,effect,id) {
+    this.number = number;
+    this.color= color;
+    this.effect= effect;
+    this.id=id;
+  }
+}
+
 
 const cardContainer = document.querySelector(".cardContainer");
 

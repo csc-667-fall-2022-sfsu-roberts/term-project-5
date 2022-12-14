@@ -2,14 +2,15 @@ extends /layouts/layout
 
 block content    
   nav#navbar
-    h2 Welcome #{username}
     ul#navBarUL
       if logged 
-        li
-          a#signout-button Sign Out
+       li
+        let username ={name:}// get session info
+        h2 Welcome #{username}
+        a#signout-button Sign Out
       else
-        li
-          a(href='/auth/signup') Sign Up
+      li
+        a(href='/auth/signup') Sign Up
       li
         a(href='/lobby') Lobby page
       li
