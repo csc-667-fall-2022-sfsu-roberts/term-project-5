@@ -1,6 +1,8 @@
 script(src="../frontend-js/gameFunc/deck.js" defer)
-script(src="../frontend-js/gameFunc/playerHand.js" defer)
+//script(src="../frontend-js/gameFunc/playerHand.js" defer)
 link(rel='stylesheet' href='/stylesheets/cards.css')
+
+
 html 
  h2 Testing cards
   
@@ -9,15 +11,16 @@ body
   
 .gameContainer
   .chatContainer
-  
+     include includes/chat
   .playerN Opponent has n'th of cards
     .NumCards
   
-  .currentCard CurrentCard
+  .currentCard
+    #playCard CurrentCard
   
   .cardContainer 
-    .cards.red.one 
-    .cards.blue.two
+    .cards.red.one#1
+    .cards.blue.two#2
     .cards.yellow.three
     .cards.green.four
     .cards.wild.two
