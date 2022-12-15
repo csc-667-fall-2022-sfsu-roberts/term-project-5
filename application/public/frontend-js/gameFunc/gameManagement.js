@@ -1,0 +1,24 @@
+// const socket = io();
+const gameList = document.querySelector("#games-list ul");
+
+document.querySelector("#new-game").addEventListener((event) => {
+    event.preventDefault();
+})
+
+socket.on("game:created", ({ game_id, title }) => {
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    span.innerText = title
+
+    const form = document.createElement("form");
+    form.action = `/api/games/${game_id}/join`;
+    form.method = "post";
+
+    const button = document.createElement("button");
+    button.innerText = "Join";
+
+    form.appendChild(button);
+    li.appendChild(span);
+    li.appendChild(form);
+
+})

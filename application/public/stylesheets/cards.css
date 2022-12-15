@@ -1,0 +1,156 @@
+body {
+  background-color: rgba(167, 167, 167, 0.806);
+}
+
+.gameContainer {
+  height: 500px;
+  max-width: 1000px;
+  position: relative;
+  display: block;
+  margin: 50px auto;
+  border: 1px solid blue;
+  background-color: rgba(187, 29, 24, 0.806);
+}
+
+.chatContainer {
+  height: 500px;
+  width: 200px;
+  position: absolute;
+  display: block;
+  top: 0;
+  background-color: black;
+  opacity: 25%;
+}
+
+#Button {
+  position: absolute;
+  display: block;
+  top: 80%;
+  right: 90;
+}
+
+
+.playerN {
+  text-align: center;
+  font-size: large;
+  position: absolute;
+  display: block;
+  background-color: yellow;
+  height: 50px;
+  width: 171px;
+  top: 15%;
+  left: 45%;
+}
+
+.currentCard {
+  text-align: center;
+  font-size: x-large;
+  position: absolute;
+  background-color: slategrey;
+  height: 258px;
+  width: 171px;
+  top: 25%;
+  left: 45%;
+  scale: .75 .75;
+  display: block;
+
+}
+
+.cardContainer {
+  position: absolute;
+  height: auto;
+  width: 855px;
+  display: inline-flex;
+  top: 60%;
+  left: 10%;
+  scale: .5 .5;
+}
+
+.cards {
+  height: 258px;
+  width: 171px;
+  display: inline-flex;
+  background-image: url("/../images/cards.png");
+  transition: .2s;
+  position: static;
+}
+
+.cards:hover {
+  transform: translateY(-15%);
+}
+
+.red {
+  background-position-y: 0px;
+  max-block-size: inherit;
+}
+
+.blue {
+  background-position-y: -285px;
+
+}
+
+.yellow {
+  background-position-y: -570px;
+}
+
+.green {
+  background-position-y: -855px;
+}
+
+.wild {
+  background-position-y: -1140px;
+  background-position-x: -400px;
+}
+
+.addFour {
+  background-position-y: -1140px;
+  background-position-x: -200px;
+}
+
+.one {
+  background-position-x: -201px;
+}
+
+.two {
+  background-position-x: -401px;
+}
+
+.three {
+  background-position-x: -601px;
+}
+
+.four {
+  background-position-x: -801px;
+}
+
+.five {
+  background-position-x: -1001px;
+}
+
+.six {
+  background-position-x: -1201px;
+}
+
+.seven {
+  background-position-x: -1400px;
+}
+
+.eight {
+  background-position-x: -1600px;
+}
+
+.nine {
+  background-position-x: -1800px;
+}
+
+.skip {
+  background-position-x: -2000px;
+}
+
+.reverse {
+  background-position-x: -2200px;
+}
+
+.addTwo {
+  background-position-x: -2400px;
+}

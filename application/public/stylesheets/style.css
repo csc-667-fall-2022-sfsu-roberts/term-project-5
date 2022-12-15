@@ -1,9 +1,35 @@
+#navbar {
+  display:block;
+  background-color: rgb(116, 142, 117);
+  width: auto;
+  overflow: hidden;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: red;
+  background-color: grey;
 }
 
+#navBarUL {
+  display: flex;
+  list-style-type: none;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
 a {
-  color: #00B7FF;
+  color: black;
+}
+
+#content-wrapper {
+  background-color: green;  
+}
+
+.content {
+background-color: beige;
+width: 1000px;
+
 }

@@ -9,11 +9,16 @@ const protect = require('./app-config/protect');
 if(process.env.NODE_ENV === 'development') {
   require("dotenv").config();
 }
-
+ 
 const indexRouter = require('./routes/pages/index');
 const authRouter = require('./routes/pages/auth');
 const lobbyRouter = require('./routes/pages/lobby');
 const gamesRouter = require('./routes/pages/games');
+const chatRouter = require('./routes/authenticate/chat');
+const gamesApi = require('./routes/authenticate/games');
+const cardsRouter = require('./db/cards');
+
+
 
 const app = express();
 
@@ -39,6 +44,11 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/lobby', protect, lobbyRouter);
 app.use('/games', protect, gamesRouter);
+app.use('/chat', chatRouter); // need to authenticate
+app.use('/api/games', protect, gamesApi);
+app.use('/cards', cardsRouter); 
+//app.use('/cardTable', cardTableRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
