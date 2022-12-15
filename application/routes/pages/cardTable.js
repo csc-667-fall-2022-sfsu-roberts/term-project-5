@@ -8,7 +8,7 @@ const special = ['none', 'skip', 'reverse', 'addTwo', 'addFour'];
 
 router.get("/", (request, response) => {
 
-    let counter = 0;
+    let idCount = 0;
     color1.forEach(colorVal => {
 
         number.forEach(numVal => {
@@ -18,22 +18,19 @@ router.get("/", (request, response) => {
                     break;
                 case "eleven": efx = special[2];
                     break;
-                case "twelve": efx = special[3];
+                case "twelve": efx = special[4];
                     break;
-
-
             }
-            counter++;
-            currentCard = [counter, colorVal, numVal, efx];
 
-             db.any(`INSERT INTO "cardTable" (color,value,effect) VALUES ('${colorVal}','${numVal}','${efx}')`)
-              .then( _ => db.any(`SELECT * FROM "cardTable"`) )
+            idCount++;
+            
+            db.any(`INSERT INTO "cardTable" (id,color,value,effect) VALUES ( '${idCount}','${colorVal}','${numVal}','${efx}')`)
+              .then( _ => db.any(`SELECT * FROM "cardTable" WHERE id < 53`) )
               .then( results => response.json( results ) )
               .catch( error => {
               console.log( error )
               response.json({ error })
               })
-
 
         })
     })
