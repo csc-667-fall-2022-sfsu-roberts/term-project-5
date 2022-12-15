@@ -4,7 +4,7 @@ module.exports = {
   'cardTable', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        autoIncrement: false,
         type: Sequelize.INTEGER
       },
       game_id: {
