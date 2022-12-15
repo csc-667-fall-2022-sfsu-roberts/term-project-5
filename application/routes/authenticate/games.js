@@ -24,8 +24,7 @@ router.post("/create", (request, response) => {
 router.post("/:id/join", (request, response) => {
     const { userId } = request.session;
     const { id } = request.params;
-
-    console.log(userId);
+    
     Games.addUser(userId, id)
     .then(() => {
         response.redirect(`/games/${id}`);

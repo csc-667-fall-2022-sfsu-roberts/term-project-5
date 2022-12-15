@@ -3,7 +3,7 @@ const db = require('../db/index.js');
 const router = express.Router();
 
 const color = ['red', 'blue', 'yellow', 'green', 'wild'];
-// 0-9 real number vals,10-12 are corespondent to skip,reverse,addtwo,addfour;
+
 const number = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
 const special = ['none', 'skip', 'reverse', 'addTwo', 'addFour'];
 
