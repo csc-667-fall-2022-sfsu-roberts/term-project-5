@@ -1,0 +1,16 @@
+html
+  head
+    meta(charset='UTF-8')
+    title= title
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(rel='stylesheet' href='/stylesheets/cards.css')
+  body
+    include /includes/header
+
+    block content
+
+    block footer 
+    
+    if logged
+      script(src='../frontend-js/signout.js')

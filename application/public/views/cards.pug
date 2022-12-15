@@ -1,25 +1,23 @@
-script(src="../frontend-js/gameFunc/deck.js" defer)
-script(src="../frontend-js/gameFunc/playerHand.js" defer)
-link(rel='stylesheet' href='/stylesheets/cards.css')
-html 
- h2 Testing cards
-  
-body 
+extends ./layouts/cards-layout.pug
 
-  
-.gameContainer
-  .chatContainer
-  
-  .playerN Opponent has n'th of cards
-    .NumCards
-  
-  .currentCard CurrentCard
-  
-  .cardContainer 
-    .cards.red.one 
-    .cards.blue.two
-    .cards.yellow.three
-    .cards.green.four
-    .cards.wild.two
+block content
+  .gameContainer
+    .chatContainer
     
-  input#Button(type="button", value="Draw Card")
+    .playerN Opponent has n'th of cards
+      .NumCards
+    
+    .currentCard CurrentCard
+    
+    .cardContainer 
+      .cards.red.one 
+      .cards.blue.two
+      .cards.yellow.three
+      .cards.green.four
+      .cards.wild.two
+      
+    input#Button(type="button", value="Draw Card")
+
+block footer 
+  script(src="../frontend-js/gameFunc/deck.js" defer)
+  script(src="../frontend-js/gameFunc/playerHand.js" defer)
