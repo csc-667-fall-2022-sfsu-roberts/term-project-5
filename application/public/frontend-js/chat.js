@@ -1,6 +1,5 @@
 const socket = io(); 
-
- const input = document.querySelector("#message");
+const input = document.querySelector("#message");
 
 input.addEventListener("keydown", (event) => {
   if (event.keyCode == 13) {
