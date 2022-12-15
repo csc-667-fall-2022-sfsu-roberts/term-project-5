@@ -1,9 +1,4 @@
-// const socket = io();
 const gameList = document.querySelector("#games-list ul");
-
-document.querySelector("#new-game").addEventListener((event) => {
-    event.preventDefault();
-})
 
 socket.on("game:created", ({ game_id, title }) => {
     const li = document.createElement("li");
