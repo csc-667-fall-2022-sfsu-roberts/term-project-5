@@ -15,7 +15,7 @@ module.exports = {
       deck_id: {
         type: Sequelize.INTEGER
       },
-      player_id: {
+      user_id: {
         type: Sequelize.INTEGER
       },
       created_at: {

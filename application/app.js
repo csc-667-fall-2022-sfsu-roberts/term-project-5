@@ -17,6 +17,7 @@ const gamesRouter = require('./routes/pages/games');
 const chatRouter = require('./routes/authenticate/chat');
 const gamesApi = require('./routes/authenticate/games');
 const cardsRouter = require('./db/cards');
+const continueRouter = require('./routes/pages/continue');
 
 
 
@@ -47,6 +48,7 @@ app.use('/games', protect, gamesRouter);
 app.use('/chat', chatRouter); // need to authenticate
 app.use('/api/games', protect, gamesApi);
 app.use('/cards', cardsRouter); 
+app.use('/continue', protect, continueRouter);
 //app.use('/cardTable', cardTableRouter);
 
 

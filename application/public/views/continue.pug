@@ -1,0 +1,10 @@
+extends /layouts/layout
+
+block content
+    h2 Joined Games
+    ul
+        each game in joinedGames
+            li
+                span= game.title
+                form(action=`/api/games/${game.id}/join`, method="post")
+                    button(type="submit") Join

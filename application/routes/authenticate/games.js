@@ -22,14 +22,18 @@ router.post("/create", (request, response) => {
 });
 
 router.post("/:id/join", (request, response) => {
-    const { user_id } = request.session;
+    const { userId } = request.session;
     const { id } = request.params;
-    Games.addUser(user_id, id)
+
+    console.log(userId);
+    Games.addUser(userId, id)
     .then(() => {
         response.redirect(`/games/${id}`);
     })
     .catch((error) => {
         console.log(error);
+        console.log("User is already in a game");
+        response.redirect(`/games/${id}`);
     })
 })
 
