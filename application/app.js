@@ -16,6 +16,7 @@ const lobbyRouter = require('./routes/pages/lobby');
 const gamesRouter = require('./routes/pages/games');
 const chatRouter = require('./routes/authenticate/chat');
 const cardsRouter = require('./db/cards');
+const cardTableRouter = require('./routes/pages/cardTable');
 
 
 
@@ -45,7 +46,7 @@ app.use('/lobby', protect, lobbyRouter);
 app.use('/games', protect, gamesRouter);
 app.use('/chat', chatRouter); // need to authenticate
 app.use('/cards', cardsRouter); 
-//app.use('/cardTable', cardTableRouter);
+app.use('/cardTable', cardTableRouter);
 
 
 // catch 404 and forward to error handler

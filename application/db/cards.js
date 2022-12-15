@@ -1,8 +1,6 @@
-console.log("test1");
 const express = require("express");
+const db = require('../db/index.js');
 const router = express.Router();
-
-const db = require('./index');
 
 const color = ['red', 'blue', 'yellow', 'green', 'wild'];
 // 0-9 real number vals,10-12 are corespondent to skip,reverse,addtwo,addfour;
@@ -30,17 +28,7 @@ router.get("/cards", (request, response) => {
       console.log(colorVal + " " + numVal + " " + efx)
       const card = new Card(colorVal, numVal, efx, counter);
 
-
-      let query = `INSERT INTO cardTable
-        (id, color,value,effect) VALUES ?;`;
-      counter++;
-      values = [counter, colorVal, numVal, efx]
-
-      db_con.query(query, [values], (err, rows) => {
-        if (err) throw err;
-        //testing db
-        console.log("New Row inserted");
-      });
+    
     });
   });
 });
