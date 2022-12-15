@@ -13,7 +13,7 @@ const cardContainer = document.querySelector(".cardContainer");
 
 // TODO need to get gameID,playerID to function
 //to know what game this should take place
-let spriteSheet = "/../images/cards.png";
+
 
 function addCard() {
     const container = document.querySelector(".cardContainer");
@@ -59,12 +59,14 @@ drawCard.addEventListener("click", (event) => {
 });
 
 //FOR TESTING USING BUTTONS
-deleteCard.addEventListener("click", (event) => {
-  // WIP
 
-  //get cardID then remove card from hand
-  //add that card to a junk pile or back into the deck
-    removeCard();
-});
+
+// deleteCard.addEventListener("click", (event) => {
+//   // WIP
+
+//   //get cardID then remove card from hand
+//   //add that card to a junk pile or back into the deck
+//     removeCard();
+// });
 
 
