@@ -8,7 +8,6 @@ router.post("/:id", (req, res) => {
   const { timestamp } = Date.now();
 
   req.app.io.emit(`chat${id}`,{username,message,timestamp});
-  
   res.sendStatus(200);
 });
 
