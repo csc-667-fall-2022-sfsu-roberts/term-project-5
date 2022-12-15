@@ -18,6 +18,11 @@ module.exports = {
       player_id: {
         type: Sequelize.INTEGER
       },
+      created_at: {
+        allowNull: false,
+        defaultValue: Sequelize.literal('NOW()'),
+        type: Sequelize.DATE
+      },
     });
   },
   async down(queryInterface, Sequelize) {
