@@ -1,18 +1,18 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('cardTable', {
+  up: (queryInterface, Sequelize) => {
+  return queryInterface.createTable(
+  'cardTable', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        autoIncrement: false,
         type: Sequelize.INTEGER
       },
       game_id: {
+        allowNull: true,
         type: Sequelize.INTEGER
       },
       inDeck: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.BOOLEAN,
         defaultValue: true
       },
@@ -30,7 +30,7 @@ module.exports = {
       }
     });
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('card');
-  }
-};
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('cardTable');
+    }
+   };
